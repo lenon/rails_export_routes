@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir['lib/**/*'] + Dir['exe/**/*'] + %w[LICENSE.txt README.md]
   spec.bindir = 'exe'
-  spec.executables = ['rails_export_routes']
+  spec.executables = ['rails-export-routes']
   spec.require_paths = ['lib']
 
   spec.add_dependency 'rails', '>= 6.0.0'
