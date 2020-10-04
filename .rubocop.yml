@@ -17,3 +17,13 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+# can't use with Aruba's have_same_file_content_as matcher
+RSpec/ExpectActual:
+  Enabled: false
