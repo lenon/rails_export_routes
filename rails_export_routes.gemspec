@@ -23,4 +23,7 @@ Gem::Specification.new do |spec|
   spec.bindir = 'exe'
   spec.executables = ['rails_export_routes']
   spec.require_paths = ['lib']
+
+  spec.add_dependency 'rails', '>= 6.0.0'
+  spec.add_dependency 'thor'
 end
