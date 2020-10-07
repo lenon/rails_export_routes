@@ -16,7 +16,7 @@ RSpec.describe RailsExportRoutes, type: :aruba do
 
     aggregate_failures do
       expect(last_command_started).not_to be_successfully_executed
-      expect(last_command_started).to have_output(/Expected '--format' to be one of csv, json; got foo/)
+      expect(last_command_started).to have_output(/Expected '--format' to be one of csv, json, json-pretty; got foo/)
     end
   end
 
@@ -62,6 +62,18 @@ RSpec.describe RailsExportRoutes, type: :aruba do
     aggregate_failures do
       expect(last_command_started).to be_successfully_executed
       expect('my-app-routes.json').to have_same_file_content_as('%/output.json')
+    end
+  end
+
+  it 'correctly exports routes to a pretty JSON file' do
+    copy('%/sample_app', 'sample_app')
+    cd('sample_app')
+
+    run_command('rails-export-routes export --format json-pretty my-app-routes.json')
+
+    aggregate_failures do
+      expect(last_command_started).to be_successfully_executed
+      expect('my-app-routes.json').to have_same_file_content_as('%/output-pretty.json')
     end
   end
 end
