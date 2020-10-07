@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_export_routes (0.1.0)
+    rails_export_routes (0.1.1)
       rails (>= 6.0.0)
       thor
 
